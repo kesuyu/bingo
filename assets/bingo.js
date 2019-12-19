@@ -3,7 +3,8 @@
     var modalSettings =$('#modal-settings')
     var buttonStart = $('#button-start');
     var divField = $('#field');
-    var audioDrum = $('#drum').get(0);
+    var audioDrumroll = $('#audio-drumroll').get(0);
+    var audioDrumfinish = $('#audio-drumfinish').get(0);
 
     // init number list and storage
     var maxNumber = 75;
@@ -35,7 +36,7 @@
     var toBingoString = function(n){
         if(n > 9) {
             return n.toString(10);
-        } else if (n < 0) {	
+        } else if (n < 0) {
             return '00';
         } else {
             return '0' +  n.toString(10);
@@ -103,13 +104,16 @@
         $('.won-previous').removeClass('won-previous');
         $('.lotterying').removeClass('lotterying');
         $('#' + toBallIdString(n)).addClass('won won-previous');
-        audioDrum.pause();
+        audioDrumroll.pause();
+        audioDrumfinish.currentTime = 0;
+        audioDrumfinish.play();
     };
     var start = function(){
         isStarted = true;
         buttonStart.text('ストップ！');
-        audioDrum.currentTime = 0; 
-        audioDrum.play();
+        audioDrumfinish.pause();
+        audioDrumroll.currentTime = 0;
+        audioDrumroll.play();
         lotterying();
     };
     var startClicked = function(e){
@@ -128,7 +132,8 @@
             divField.empty();
             initField();
             modalSettings.modal('hide');
-            audioDrum.pause();
+            audioDrumroll.pause();
+            audioDrumfinish.pause();
             buttonStart.focus();
         }
     };
