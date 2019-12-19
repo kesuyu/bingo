@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bingo.css">
+    <title>ビンゴマシーーーン Ver.0.0.1</title>
+</head>
+
+<body>
+  <p>
+    <div class="container text-center">
+      <div class="card">
+        <h4 class="card-header">ビンゴマシーーーン Ver.0.0.1</h4>
+        <div class="card-body">
+          <p>
+            <div id="field" class="col-lg-12"></div>
+          </p>
+          <button id="button-start" type="button" class="btn btn-success rounded-pill btn-lg">回転！</button>
+        </div>
+      </div>
+    </div>
+  </p>
+
+  <p>
+    <div class="container">
+      <div class="card">
+        <h5 class="card-header">説明</h5>
+        <div class="card-body">
+          <p>
+            <li>回転ボタンを押すと抽選を開始し、もう一度押すと止まります。</li>
+            <li>抽選演出はあくまでも演出です。目押しはできません！</li>
+            <li>設定から最大値の設定(未実装)とゲームの初期化ができます。</li>
+          </p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-settings">設定</button>
+        </div>
+      </div>
+    </div>
+  </p>
+
+  <div id="modal-settings" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">ゲーム設定</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="number1">ビンゴボール数(未実装)</label>
+            <input type="number" class="form-control" value="75">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <button id="button-reset" type="button" class="btn btn-warning">初期化</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="drum" preload="auto">
+    <source src="assets/nc79078.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="assets/jquery-3.4.1.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/bingo.js "></script>
+</body>
+</html>

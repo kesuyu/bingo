@@ -1,0 +1,44 @@
+.bingo-ball {
+  font-size: 35pt;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+}
+
+.notwon {
+  background: gray;
+}
+
+.won {
+  background: skyblue;
+}
+
+.won-previous {
+  background: orangered;
+  animation-name: won;
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+.lotterying {
+  animation-name: lotterying;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes lotterying {
+  0% {transform: scale(0.5, 0.5)}
+  0%,90% {background: orange;}
+  100% {transform: scale(1, 1)}
+}
+
+@keyframes won {
+  0% {transform: scale(0, 0)}
+  10%,100% {background: orangered;}
+  50% {transform: scale(2, 2)}
+  100% {transform: scale(1, 1)}
+}
